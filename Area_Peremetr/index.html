@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <title>Մակերեսի հաշվարկի ծրագիր</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3Ki2_TNWpaiNF8A_8wiDuemaxTuNzT_w1YQ&s">
+</head>
+<body>
+  <div class="header">
+    <h1>Մակերեսի հաշվարկի ծրագիր</h1>
+    <p>Այս ծրագիրը նախատեսված է տարբեր երկրաչափական պատկերների մակերես հաշվելու համար</p>
+  </div>  
+
+<div class="big">
+  <div class="small_1">
+    <h2>Ընտրեք ձևը</h2>
+    <select id="select" onchange="GetInputs()">
+      <option selected disabled hidden>Ընտրեք ձևը</option>
+      <option value="circle">Շրջան</option>
+      <option value="square">Քառակուսի</option>
+      <option value="triangle">Եռանկյուն</option>
+      <option value = "rectangular">Ուղղանկյուն</option>
+    </select>
+
+    <div class="checkbox">
+      <input type="checkbox" id="checkboxArea" value="area" checked>
+      <label>Մակերես</label>
+      <br>
+      <input type="checkbox" id="checkboxPerimeter" value="perimeter" checked>
+      <label>Պարագիծ(երկարություն)</label>
+    </div>
+
+    <h2>Մուտքագրեք չափերը</h2>
+
+    <div id="circle" class="shape">
+      <label for="radius">Շառավիղ</label>
+      <input type="number" min="1" id="radius" placeholder="Շառավիղը">
+    </div>
+
+    <div id="square" class="shape">
+      <label for="side">Կողմ</label>
+      <input type="number" min="1" id="side4" placeholder="Կողմը">
+    </div>
+
+    <div id="triangle" class="shape">
+      <label>Կողմ</label>
+      <input type="number" min="1" id="side1" placeholder="Կողմ 1">
+      <label>Կողմ</label>
+      <input type="number" min="1" id="side2" placeholder="Կողմ 2">
+      <label>Կողմ</label>
+      <input type="number" min="1" id="side3" placeholder="Կողմ 3">
+    </div>
+
+    <div id="rectangular" class="rectangular"  style="display: none;">
+      <label for="side">Կողմ 1</label>
+      <input type="number" min="1" id="side5" placeholder="Կողմը">
+      <label for="side">Կողմ 2</label>
+      <input type="number" min="1" id="side6" placeholder="Կողմը">
+    </div>
+
+    <br>
+
+    <button id="calculate" onclick="SaveShape()">Պահպանել ձևը</button>
+    <br><br>
+    
+    <div class="small_2">
+      <h2>Արդյունքը</h2>
+      <button id="calculate" onclick="ShowShapes()">Ցուցադրել բոլոր ձևերը</button>
+
+      <pre id="result"></pre>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
